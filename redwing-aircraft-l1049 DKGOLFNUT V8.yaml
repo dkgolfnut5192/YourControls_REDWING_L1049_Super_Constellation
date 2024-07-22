@@ -1,0 +1,1305 @@
+# Version 2.0.51 (A/B)
+
+include:
+  - definitions/modules/Instruments/GTN650.yaml
+#  - definitions/modules/autopilot.yaml
+  - definitions/modules/controls.yaml
+  - definitions/modules/deice.yaml
+  - definitions/modules/electrical.yaml
+  - definitions/modules/engines.yaml
+  - definitions/modules/fuel.yaml
+  - definitions/modules/general.yaml
+  - definitions/modules/handling.yaml
+  - definitions/modules/lights.yaml
+#  - definitions/modules/magnetos.yaml
+  - definitions/modules/navigation.yaml
+  - definitions/modules/radios.yaml
+  - definitions/modules/safety.yaml
+  - definitions/modules/transponder.yaml
+  - definitions/modules/trim.yaml
+ 
+shared:
+
+  - # Cabin Light - Pilot Example
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:19
+    var_units: PERCENT
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_19_SET
+    event_param: 19
+  - # Charts Light - Pilot Example    
+    type: NumSet
+    var_name: A:LIGHT POTENTIOMETER:12
+    var_units: PERCENT
+    var_type: f64
+    event_name: LIGHT_POTENTIOMETER_12_SET
+    event_param: 12
+
+  - # LVAR's
+    type: var
+    var_name: L:CONST_BOOSTER_AIL
+    
+# - ############## Center Console - ELE/RUD/AIL BOOSTERS, FLAPS, GEAR HORN, PARKING BRAKE, PROPS, THROTTLES  #############
+  - # RUDDER BOOSTERS
+    type: var
+    var_name: L:CONST_BOOSTER_ELEV
+  - # RUDDER BOOSTERS
+    type: var
+    var_name: L:CONST_BOOSTER_RUDDER
+  - # AILERON BOOSTERS
+    type: var
+    var_name: L:CONST_BOOSTER_AILERON
+  - # FLAPS HANDLE INDEX
+    type: var
+    var_name: L:FLAPS HANDLE INDEX
+  - # GEAR HORN SILENCE
+    type: var
+    var_name: L:HORN_RELEASE
+  - # PARKING BRAKE HANDLE
+    type: var
+    var_name: L:PARKINGBRAKE_POSITION 
+    
+#  - # PROP LEVERS #
+  - 
+    type: var
+    var_name: L:General Engine Propellor Position:1
+  -
+    type: var
+    var_name: L:General Engine Propellor Position:2
+  -
+    type: var
+    var_name: L:General Engine Propellor Position:3
+  -
+    type: var
+    var_name: L:General Engine Propellor Position:4  
+
+#  - # THROTTLE LEVERS - NOT NEEDED #
+
+    
+# - ############## CENTER CONSOLE - AUTOPILOT CONTROLS #############
+  - 
+    type: var
+    var_name: L:CONST_FPATH
+  -
+    type: var
+    var_name: L:AUTOPILOT_MASTER
+  - 
+    type: var
+    var_name: L:AUTOPILOT_SWITCH_ALT
+  -
+    type: var
+    var_name: L:AUTOPILOT_HEADING
+  - 
+    type: var
+    var_name: L:AUTOPILOT_ALTITUDE
+  -
+    type: var
+    var_name: L:CONST_PUSH_AUTOPILOT
+  -         
+    type: var
+    var_name: L:CONST_PA_CAGE
+
+# - ############## CENTER CONSOLE - GEAR & ELE/RUD/AIL SERVO DISCONNECTS #############
+  - # lANDING GEAR lEVER
+    type: var
+    var_name: L:LANDING_GEAR_Gear 
+  - # lANDING GEAR HANDLE POSITION
+    type: var
+    var_name: L:GEAR HANDLE POSITIOIN
+  - # lANDING GEAR RIGHT POSITION
+    type: var
+    var_name: L:GEAR RIGHT POSITION
+  - # lANDING GEAR LEFT POSITION
+    type: var
+    var_name: L:GEAR LEFT POSITION
+  - # lANDING GEAR CENTER POSITION
+    type: var
+    var_name: L:GEAR CENTER POSITION
+  - # ELEVATOR SERVO
+    type: var
+    var_name: L:PA_E
+  - # RUDDER SERVO
+    type: var
+    var_name: L:PA_R
+  - # AILERON SERVO
+    type: var
+    var_name: L:PA_A
+  - # AUX ELEVATOR BOOOST
+    type: var
+    var_name: L:CONST_BOOSTER_ELEV
+
+#  - ############## CLIPBOARD - MAIN MENU PAGE #############
+  - # CLIPBOARD PAGE VARIABLE
+    type: var
+    var_name: L:CONST_CLIPBOARD_PAGE
+  - # TYPE OF FLIGHT
+    type: var
+    var_name: L:CONST_CLIPBOARD_flyeasy
+  - # STATUS OPTIONS 
+    type: var
+    var_name: L:CONST_CLIPBOARD_starter
+  - # COCKPIT LIGHTS OPTION
+    type: var
+    var_name: L:CONST_CLIP_light
+  - # APU OPTION
+    type: var
+    var_name: L:CONST_CLIP_APU    
+  - # TRUE AIRSPEED NEEDLE OPTION
+    type: var
+    var_name: L:CONST_trueairspeed
+  - # YOKE VISIBILITY 
+    type: var
+    var_name: L:CONST_CLIP_yoke
+    
+#   - # VFX SMOKE VISIBILITY - FUTURE  #
+#   type: var
+#   var_name: L:
+  - # GTN 750 VISIBLE
+    type: var
+    var_name: L:CONST_CLIP_GPS1
+  - # GTN 650 VISIBLE 
+    type: var
+    var_name: L:CONST_CLIP_GPS2
+  - # GTN 750 & 650 VISIBLE
+    type: var
+    var_name: L:CONST_CLIP_GPS3
+ 
+#  - # CLIPBOARD - GROUND & FUEL PAGE #
+  - # REPLPENISH HYDRAULIC 
+    type: var
+    var_name: L:CONST_CLIP_reple_hyd
+  - # REPLPENISH ALCHOHOL
+    type: var
+    var_name: L:CONST_CLIP_reple_alc00l
+  - # REPLPENISH OIL
+    type: var
+    var_name: L:CONST_CLIP_reple_oil
+  - # REPLPENISH FIRE EXTINGUISHER BOTTLES
+    type: var
+    var_name: L:CONST_CLIP_fireext  
+  - # FIX & REPAIR - GROUND MAINTENANCE
+    type: var
+    var_name: L:CONST_CLIP_maintenance
+  - # WINGTIP VISIBILITY
+    type: var
+    var_name: L:CONST_WINGTIPS
+
+#  - ############## CLIPBOARD - CG & LOAD PAGE #############
+#  - # PAYLOAD OPTIONS #
+  - # INSTANT PAYLOAD BTN
+    type: var
+    var_name: L:CLIP_payload_inst   
+  - # RESET PAYLOAD BTN
+    type: var
+    var_name: L:CLIP_payload_reset
+  - # PAYLOAD PRECONFIG & FUEL LOAD
+    type: var
+    var_name: L:CONST_CLIP_flytime  
+  - # CARGO INTERIOR ARRANGEMENT
+    type: var
+    var_name: L:CONST_CARGO    
+
+#  - # SERVICES #
+  -
+    type: var
+    var_name: L:CONST_CLIP_remove_chock
+  - 
+    type: var
+    var_name: L:CONST_CLIP_remove_before
+  -
+    type: var
+    var_name: L:CONST_CLIP_remove_cover
+  - 
+    type: var
+    var_name: L:CONST_CLIP_remove_service    
+  -
+    type: var
+    var_name: L:CONST_CLIP_GPU
+#  - # DOORS #
+  - # MILITARY REAR UPPER CARGO DOOR
+    type: var
+    var_name: L:CONST_CLIP_cargo_door
+  - # LOWER FRONT CARGO
+    type: var
+    var_name: L:CONST_CLIP_cargofrontdoor
+  - # LOWER REAR CARGO
+    type: var
+    var_name: L:CONST_CLIP_cargoreardoor 
+  - # FLIGHT ENGINEER CREW DOOR
+    type: var
+    var_name: L:CONST_CLIP_doorcockpit
+  - # MAIN PASSENGER CABIN DOOR
+    type: var
+    var_name: L:CONST_CLIP_doormain
+  - # REAR PASSENGER CABIN DOOR
+    type: var
+    var_name: L:CONST_CLIP_doorrear
+#  - # STAIRS
+  - # FRONT PASSENGER STAIRS
+    type: var
+    var_name: L:CONST_StairA   
+  - # FRONT FLIGHT CREW STAIRS
+    type: var
+    var_name: L:CONST_StairA     
+  - # REAR PASSENGER STAIRS
+    type: var
+    var_name: L:CONST_StairA     
+   
+    
+#  - ############## CLIPBOARD - ORDERS PAGE #############
+#  - ############## PILOT OPTIONS #############
+  -
+    type: var
+    var_name: L:CONST_CLIP_AIPIL_check00
+  - 
+    type: var
+    var_name: L:CONST_CLIP_AIFE_check_aipiltakeoff
+  -
+    type: var
+    var_name: L:CONST_CLIP_AIFE_check_aipillanding
+  - 
+    type: var
+    var_name: L:CONST_CLIP_AIFE_check_aipilaltitude    
+  -
+    type: var
+    var_name: L:CONST_CLIP_AIFE_check_aipilheading
+  - 
+    type: var
+    var_name: L:CONST_CLIP_AIFE_check_aipilspeed
+    
+#  - ############## C0PILOT OPTIONS #############
+  - # ENABLE or DISABLE COPILIT AI
+    type: var
+    var_name: L:CONST_CLIP_AICOPIL_check00
+  - # MANAGE LANDING
+    type: var
+    var_name: L:CONST_CLIP_AICOPIL_checklanding  
+  - # MANAGE TAKEOFF
+    type: var
+    var_name: L:CONST_CLIP_AICOPIL_checktakeoff
+  - # MANAGE CRUISE & ROUTE
+    type: var
+    var_name: L:CLIP_AIFE_director   
+  - # GPS OR NAV SELECTOR
+    type: var
+    var_name: L:CLIP_AIFE_GPSNAV    
+#  - # AIFE OPTIONS AND CHECKLISTS
+  - # ENABLE DISABLE AIFE
+    type: var
+    var_name: L:CONST_CLIP_AIFE_check00 
+  - # BEFORE START
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist01
+  - # DURING WARMUP
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist02 
+  - # TAXIING
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist03
+  - # BEFORE TAKEOFF
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist04 
+  - # TAKEOFF CLEARANCE
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist05
+  - # AFTER TAKEOFF
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist06    
+  - # START ENGINES
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist07
+  - # END BOARDING 
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist08 
+    
+#  - ########     UNUSED     ##########
+#    type: var
+#    var_name: L:CONST_CLIP_AIFE_checklist09 
+
+  - # BEFORE DESCENT
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist10 
+  - # BEFORE LANDING
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist11
+  - # AFTER LANDING
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist12 
+  - # ON PARKING
+    type: var
+    var_name: L:CONST_CLIP_AIFE_checklist13
+
+#  - # CoPILOT PANEL RIGHT - LIGHT SWITCHES 
+  - # PANEL LIGHT 
+    type: var
+    var_name: L:LIGHTING_Switch_panel_COPIL
+  - # CHARTS LIGHT
+    type: var
+    var_name: L:LIGHTING_Switch_chart_COPIL
+  - # PEDESTAL REAR LIGHT
+    type: var
+    var_name: L:LIGHTING_Switch_PEDESTAL
+#  - # CoPILOT PANEL RIGHT - ROTARY SWITCHES 
+  - # PANEL LIGHT
+    type: var
+    var_name: L:LIGHTING_Knob_panel_COPIL
+  - # CHART LIGHT
+    type: var
+    var_name: L:LIGHTING_Knob_chart_COPIL
+  - # OVERHEAD FLOOD LIGHT
+    type: var
+    var_name: L:knob_OVHD_COPIL
+
+#  - ############## CoPILOT PANEL RIGHT - WINDOWS AND PITOT DEICE SWITCHES #############
+  - # LEFT PITOT HEAT SWITCH 
+    type: var
+    var_name: L:DEICE_Pitot_1    
+  - # RIGHT PITOT HEAT SWITCH
+    type: var
+    var_name: L:DEICE_Pitot_2
+  - # WINDSHIELD BLOWER SWITCH
+    type: var
+    var_name: L:Switch_blower
+  - # MAST HEATER DEICE
+    type: var
+    var_name: L:Switch_MAST
+  - # NESA RESET/RE-INIT BUTTON
+    type: var
+    var_name: L:DEICE_RESET 
+  - # NESA WINDSHIELD ANTI-ICE HIGH/LOW SWITCH
+    type: var
+    var_name: L:CONST_Windshield_antiice_switch 
+
+#  - # WINDOW DEICER SWITCHES #
+  -
+    type: var
+    var_name: L:DEICE_SWITCH_Windshield_3
+  -
+    type: var
+    var_name: L:DEICE_SWITCH_Windshield_4   
+  -
+    type: var
+    var_name: L:DEICE_SWITCH_Windshield_5   
+
+# - ############## FLIGHT ENGNEER WORKSTATION -  M.J.B No.1 #############
+  - # VOLTAGE SELECTOR A.C.
+    type: var
+    var_name: L:Const_selected_AC_Bus
+  - # VOLTAGE SELECTOR D.C.
+    type: var
+    var_name: L:Const_selected_DC_Bus
+  - # CART POWER - GPU SWITCH
+    type: var
+    var_name: L:ELECTRICAL_ExternalPower_1
+  - # BATTERY SHIP MASTER SWITCH
+    type: var
+    var_name: L:ELECTRICAL MASTER BATTERY    
+#  - # GENERATORS 1-4 SWITCHs #
+  - # GEN 1
+    type: var
+    var_name: L:CONST_GEN1
+  - # GEN 2
+    type: var
+    var_name: L:CONST_GEN2
+  - # GEN 3
+    type: var
+    var_name: L:CONST_GEN3
+  - # GEN 4
+    type: var
+    var_name: L:CONST_GEN4  
+    
+#  - # GENERATOR BREAKERS #
+  - 
+    type: var
+    var_name: L:COVER_TRIPPER
+  - 
+    type: var
+    var_name: L:TRIPPER1
+  -
+    type: var
+    var_name: L:TRIPPER2
+  - 
+    type: var
+    var_name: L:TRIPPER3    
+  -
+    type: var
+    var_name: L:TRIPPER4
+    
+#  - ############## FLIGHT ENGNEER WORKSTATION -  UPPER APU PANEL #############
+#  - ############## APU GEN AREA ##############
+  - # GEN SELECT
+    type: var
+    var_name: L:switch_APU_gen2
+  - # ON
+    type: var
+    var_name: L:APU_genOn 
+  - # OFF
+    type: var
+    var_name: L:APU_genOff 
+  - # APU FIELD RELAY REST
+    type: var
+    var_name: L:CONST_FUSE_APU
+ #  - # APU FIRE 
+  - # FIRE WARNING LIGHT
+    type: var
+    var_name: L:CONST_APU_fire_light
+  - # Discharge switch cover
+    type: var
+    var_name: L:APU_fire_Cover_Position
+  - # Discharge switch
+    type: var
+    var_name: L:APU_fire 
+  - # Fire Alarm reset/SILENCE
+    type: var
+    var_name: L:CONST_FUSE_APU_FIRE
+#  - # APU CONTROLS PANEL 
+  - # Exhaust Overtemp light
+    type: var
+    var_name: L:CONST_APU_CHT_temp_light 
+  - # Fuel Low Pressure
+    type: var
+    var_name: L:CONST_APU_fuel_press_light
+  - # Oil High Temp
+    type: var
+    var_name: L:CONST_APU_oil_tempo_light 
+#  - # Exhaust Temperature
+#    type: var
+#    var_name: L:APU_CHT
+  - # Start cover
+    type: var
+    var_name: L:APU_start_Cover_Position 
+  - # Start Switch
+    type: var
+    var_name: L:APU_start
+  - # Start Light
+    type: var
+    var_name: L:CONST_APU_start_light 
+  - # APU Stop switch cover
+    type: var
+    var_name: L:APU_stop_Cover_Position
+  - # APU Stop Switch
+    type: var
+    var_name: L:APU_stop 
+    
+#  - ############## FLIGHT ENGNEER WORKSTATION -  MECH/GALLEY/NAVIGATOR CALL BTNs, DIMMERS, PROP AUTOFEATHERING SYSTEM #############
+  - # MECHANIC CALL
+    type: var
+    var_name: L:MecaCall 
+  - # GALLEY CALL
+    type: var
+    var_name: L:GalleyCall
+  - # NAVIGATOR CALL
+    type: var
+    var_name: L:NavCall 
+#  - # LIGHTING KNOBS   
+  - # STATION 260 PANEL LIGHTS
+    type: var
+    var_name: L:inge_light_260
+  - # F.E. INSTRUMENT LIGHTS
+    type: var
+    var_name: L:inge_light_aux
+  - # F.E. PANEL LIGHTS
+    type: var
+    var_name: L:inge_light_panel
+    
+#  - ############## AUTOMATIC FEATHERING - MASTER and testing  #############
+  - # MASTER COVER
+    type: var
+    var_name: L:autofeather_Cover_Position
+  - # MASTER SWITCH
+    type: var
+    var_name: L:AUTOFEATHER 
+  - # FEATHERING SW 1 COVER
+    type: var
+    var_name: L:FEATHER_TEST1_Cover_Position   
+  - # FEATHERING SW 1
+    type: var
+    var_name: L:FEATHER_TEST1
+  - # FEATHERING SW 2 COVER
+    type: var
+    var_name: L:FEATHER_TEST2_Cover_Position   
+  - # FEATHERING SW 2
+    type: var
+    var_name: L:FEATHER_TEST2
+  - # FEATHERING SW 3 COVER
+    type: var
+    var_name: L:FEATHER_TEST3_Cover_Position   
+  - # FEATHERING SW 3
+    type: var
+    var_name: L:FEATHER_TEST3
+  - # FEATHERING SW 4 COVER
+    type: var
+    var_name: L:FEATHER_TEST4_Cover_Position   
+  - # FEATHERING SW 4
+    type: var
+    var_name: L:FEATHER_TEST4    
+   
+# - ############## FLIGHT ENGNEER WORKSTATION -  M.J.B No.2 #############
+  - # F.E. DOME LIGHT
+    type: var
+    var_name: L:knob_inge
+  - # F.E. DECK LIGHT 
+    type: var
+    var_name: L:FI_Light
+    
+#  - ############## INVERTER POWER #############
+  - # INSTRUMENT
+    type: var
+    var_name: L:CONST_INST
+  - # RADIO
+    type: var
+    var_name: L:CONST_RADIO    
+  - # NESA
+    type: var
+    var_name: L:CONST_NESA
+    
+#  - ############## PROPELLER DE-ICE #############
+  - # LEFT PROP DEICE
+    type: var
+    var_name: L:DEICE_Propeller_1
+  - # RIGHT PROP DEICE
+    type: var
+    var_name: L:DEICE_Propeller_3
+#  - # CABURETOR ANTI-ICE    
+  - 
+    type: var
+    var_name: L:DEICE_SWITCH_ENGINE_1
+  -
+    type: var
+    var_name: L:DEICE_SWITCH_ENGINE_2
+  - 
+    type: var
+    var_name: L:DEICE_SWITCH_ENGINE_3
+  -
+    type: var
+    var_name: L:DEICE_SWITCH_ENGINE_4
+    
+#  - ############## ENGINES START AREA #############
+  - # ENGINE START SELECTOR
+    type: var
+    var_name: L:CONST_STARTING_STATE    
+  - # START ENG 1
+    type: var
+    var_name: L:Const _START1
+  - # START ENG 2
+    type: var
+    var_name: L:Const _START2
+  - # START ENG 3
+    type: var
+    var_name: L:Const _START3
+  - # START ENG 4
+    type: var
+    var_name: L:Const _START4 
+  - # STARTER SELECTOR WARNING LINGHT
+    type: var
+    var_name: L:CONST_SAFETY_INDICATOR_STARTER
+    
+    
+# - # FLIGHT ENGNEER WORKSTATION -  M.J.B No.2A BREAKERS & FUSES - FUTURE
+
+# - # FLIGHT ENGNEER WORKSTATION -  M.J.B No.3 BREAKERS & FUSES - FUTURE
+
+# - # FLIGHT ENGNEER WORKSTATION -  UPPER M.J.B STATION 212 FUSES - FUTURE
+
+# - ############## FLIGHT ENGNEER WORKSTATION - MAIN DESK AREA #############
+# - # CARBURETOR AIR COLD/HOT #
+  -
+    type: var
+    var_name: L:CARB_HEAT_1
+  - 
+    type: var
+    var_name: L:CARB_HEAT_2
+  -
+    type: var
+    var_name: L:CARB_HEAT_3
+  - 
+    type: var
+    var_name: L:CARB_HEAT_4 
+    
+#  - # ALTERNATE AIR OPEN/CLOSED #
+  -
+    type: var
+    var_name: L:CARB_RAM_1
+  - 
+    type: var
+    var_name: L:CARB_RAM_2
+  -
+    type: var
+    var_name: L:CARB_RAM_3
+  - 
+    type: var
+    var_name: L:CARB_RAM_4
+    
+#  - # COWL FLAPS #
+  -
+    type: var
+    var_name: L:COWLFLAPS_1
+  - 
+    type: var
+    var_name: L:RECIP ENG COWL FLAP POSITION:1
+  -
+    type: var
+    var_name: L:COWLFLAPS_2
+  - 
+    type: var
+    var_name: L:RECIP ENG COWL FLAP POSITION:2
+  -
+    type: var
+    var_name: L:COWLFLAPS_3
+  - 
+    type: var
+    var_name: L:RECIP ENG COWL FLAP POSITION:3
+  -
+    type: var
+    var_name: L:COWLFLAPS_4
+  - 
+    type: var
+    var_name: L:RECIP ENG COWL FLAP POSITION:4
+    
+#  - # OIL COOLER FLAPS #
+  -
+    type: var
+    var_name: L:CONST_COOLER_1
+  - 
+    type: var
+    var_name: L:CONST_COOLER_2
+  -
+    type: var
+    var_name: L:CONST_COOLER_3
+  - 
+    type: var
+    var_name: L:CONST_COOLER_4 
+    
+  - # SPARK CONTROL RETARD COVER 
+    type: var
+    var_name: L:SPARK_CTRL_Cover_Position
+  - # SPARK CONTROL RETARD SWITCH
+    type: var
+    var_name: L:SPARK_CTRL
+  - # SPARK CONTROL ANALIZER ON/OFF
+    type: var
+    var_name: L:CONST_AnalySpark1
+  - # PROPELLER SYNC MASTER ENG SELECTOR
+    type: var
+    var_name: L:SYNC_MASTER
+  - # PROPELLER SYNC PUSH BTN
+    type: var
+    var_name: L:PUSH_TO_SYNC
+  - # INC/DEC RPM ENG 1 SW
+    type: var
+    var_name: L:Const_SINCH1
+  - # INC/DEC RPM ENG 2 SW 
+    type: var
+    var_name: L:Const_SINCH1
+  - # INC/DEC RPM ENG 3 SW 
+    type: var
+    var_name: L:Const_SINCH1
+  - # INC/DEC RPM ENG 4 SW 
+    type: var
+    var_name: L:Const_SINCH1  
+  - # FEATHER ENG 1 COVER
+    type: var
+    var_name: L:FEATHER_OFF_1_Cover_Position
+  - # FEATHER ENG 1 SW
+    type: var
+    var_name: L:CONST_FEATHER_SWITCH1
+  - # FEATHER ENG 2 COVER
+    type: var
+    var_name: L:FEATHER_OFF_2_Cover_Position    
+  - # FEATHER ENG 2 SW
+    type: var
+    var_name: L:CONST_FEATHER_SWITCH2
+  - # FEATHER ENG 3 COVER
+    type: var
+    var_name: L:FEATHER_OFF_3_Cover_Position
+  - # FEATHER ENG 3 SW
+    type: var
+    var_name: L:CONST_FEATHER_SWITCH3
+  - # FEATHER ENG 4 COVER
+    type: var
+    var_name: L:FEATHER_OFF_4_Cover_Position
+  - # FEATHER ENG 4 SW 
+    type: var
+    var_name: L:CONST_FEATHER_SWITCH4
+  - # SPARK ANALYZER POWER SWITCH
+    type: var
+    var_name: L:CONST_AnalySpark1
+
+#  - # AUXILARY FUEL PUMPS ENG 1-4 #
+  - 
+    type: var
+    var_name: L:FUEL_PUMP_1
+  -
+    type: var
+    var_name: L:FUEL_PUMP_2
+  -
+    type: var
+    var_name: L:FUEL_PUMP_2A
+  -
+    type: var
+    var_name: L:FUEL_PUMP_3
+  -
+    type: var
+    var_name: L:FUEL_PUMP_3A
+  -
+    type: var
+    var_name: L:FUEL_PUMP_4
+  -
+    type: var
+    var_name: L:FUEL_PUMP_5
+    
+#  - # FUEL FEED TANK SELECTORS ENG 1-4 #
+  - 
+    type: var
+    var_name: L:FUEL_Switch_ENG_1
+  -
+    type: var
+    var_name: L:FUEL_Switch_ENG_2
+  -
+    type: var
+    var_name: L:FUEL_Switch_ENG_3
+  -
+    type: var
+    var_name: L:FUEL_Switch_ENG_4
+
+#  - # MIXTURE LEVERS ENG 1-4 #
+  - 
+    type: var
+    var_name: L:GENERAL ENG MIXTURE LEVER POSITION:1
+  -
+    type: var
+    var_name: L:GENERAL ENG MIXTURE LEVER POSITION:2
+  -
+    type: var
+    var_name: L:GENERAL ENG MIXTURE LEVER POSITION:3
+  -
+    type: var
+    var_name: L:GENERAL ENG MIXTURE LEVER POSITION:4
+
+#  - ############## FLIGHT ENGNEER WORKSTATION - LEFT FOOT AREA  #############
+#  - # FUEL CROSSFEED VALVES QUADRANT #
+  -
+    type: var
+    var_name: L:FUEL_Knob_Selector_5
+  -
+    type: var
+    var_name: L:CROSS_Tank_1
+  -
+    type: var
+    var_name: L:CROSS_Tank_2
+  -
+    type: var
+    var_name: L:CROSS_Tank_3
+  -
+    type: var
+    var_name: L:CROSS_Tank_4 
+    
+#  - ############## MISCELLSANEOUS - COCKPIT DOORS, WINDOWS, VISORS #############
+  - # CoPILOT WINDOW HANDLE
+    type: var
+    var_name: L:CONST_WINDOW_PULL_RIGHT
+  - # CoPILOT WINDOW HANDLE
+    type: var
+    var_name: L:CONST_WINDOW_OPENNED_RIGHT
+  - # PILOT WINDOW HANDLE
+    type: var
+    var_name: L:CONST_WINDOW_PULL_LEFT
+  - # PILOT WINDOW HANDLE
+    type: var
+    var_name: L:CONST_WINDOW_OPENNED_LEFT
+  - # STATION 260 COCKPIT DOOR
+    type: var
+    var_name: L:PORTE_COCKPIT
+ 
+#  - ############## PILOT PANEL LEFT - LIGHT SWITCHES  #############
+  - # LEADING EDGE LIGHT
+    type: var
+    var_name: L:LIGHTING_LOGO_1 
+  - # NAV LIGHTS
+    type: var
+    var_name: L:LIGHTING_NAV_1
+  - # POSITION LIGHTS
+    type: var
+    var_name: L:LIGHTNING_STROBE_1
+  - # NOSE LIGHTS
+    type: var
+    var_name: L:LIGHTING_SWITCH_LIGHT_LANDING_1
+  - # CHART LIGHTS
+    type: var
+    var_name: L:LIGHTING_SWITCH_CHART_PIL  
+  - # PANEL LIGHTS
+    type: var
+    var_name: L:LIGHTING_SWITCH_PANEL_PIL 
+  - # DEICER SWITCH 0
+    type: var
+    var_name: L:DEICE_SWITCH_Windshield_0
+  - # DEICER SWITCH 1
+    type: var
+    var_name: L:DEICE_SWITCH_Windshield_1
+    
+#  - ############## PILOT PANEL LEFT - ROTARY SWITCHES #############     
+  - # LIGHTING KNOBS
+    type: var
+    var_name: L:Knob_Center
+  -
+    type: var
+    var_name: L:Knob_Cabin
+  -
+    type: var
+    var_name: L:Knob_OVHD_PIL
+  -
+    type: var
+    var_name: L:CONST_DIM_LIGHT_CHART_PIL   
+  -
+    type: var
+    var_name: L:LIGHTING_KNOB_PANEL_PIL
+    
+#  - ############## PILOT LEFT FOOT - PNEUMATIC DEICER SYSTEM #############
+  - # VACUUM Switch Cover (RED)
+    type: var
+    var_name: L:O2_CTRL_Cover_Position   
+  - # DE-ICER VACUUM  Switch 
+    type: var
+    var_name: L:O2_CTRL       
+  - # SAFETY PRESS ON/OFF SW.
+    type: var
+    var_name: L:O2_safety_P   
+  - # Oxygen Regulator Normal/100%
+    type: var
+    var_name: L:O2_regul_P     
+  - # PNEUMATIC CYCLE Selector
+    type: var
+    var_name: L:pneudeice_selector       
+  - # No.2 VAC or Deicer Pressure
+    type: var
+    var_name: L:vacuum_NACELLE2   
+  - # No.3 VAC or Deicer Pressure
+    type: var
+    var_name: L:vacuum_NACELLE3       
+  - # PUMP A-B 
+    type: var
+    var_name: L:pneuAB
+  - # PUMP C-D
+    type: var
+    var_name: L:pneuCD
+  - # PUMP E-F
+    type: var
+    var_name: L:pneuEF
+  - # PUMP G-H
+    type: var
+    var_name: L:pneuGH
+  - # PUMP J-K
+    type: var
+    var_name: L:pneuIJ
+  - # PUMP R-S
+    type: var
+    var_name: L:pneuRS
+  
+#  - ############## OVERHEAD PANEL LEVERS - FUEL SHUTOFF & DUMP VALVES #############
+  - # Fuel Cutoff Valves Overhead #
+    type: var
+    var_name: L:FUEL_Switch_Cutoff_1
+  -
+    type: var
+    var_name: L:FUEL_Switch_Cutoff_2
+  -
+    type: var
+    var_name: L:FUEL_Switch_Cutoff_3
+  -
+    type: var
+    var_name: L:FUEL_Switch_Cutoff_4
+  - # DUMP VAVES 
+    type: var
+    var_name: L:LEVER_DUMP1
+  -
+    type: var
+    var_name: L:LEVER_DUMP2
+
+    
+#  - ############## OVERHEAD PANEL - SWITCH PANEL #############
+#  - # MAGNETOS LEFT #
+  -
+    type: var
+    var_name: L:RECIP ENG LEFT MAGNETO:1 
+  -
+    type: var
+    var_name: L:RECIP ENG LEFT MAGNETO:2
+  -
+    type: var
+    var_name: L:RECIP ENG LEFT MAGNETO:3    
+  -
+    type: var
+    var_name: L:RECIP ENG LEFT MAGNETO:4  
+  
+#  - # MAGNETOS RIGHT #
+  - 
+    type: var
+    var_name: L:RECIP ENG RIGHT MAGNETO:1 
+  -
+    type: var
+    var_name: L:RECIP ENG RIGHT MAGNETO:2
+  - 
+    type: var
+    var_name: L:RECIP ENG RIGHT MAGNETO:3
+  -
+    type: var
+    var_name: L:RECIP ENG RIGHT MAGNETO:4
+    
+  - ############## OVERHEAD PANEL LIGHTS ROTARY  #############
+    type: var
+    var_name: L:OVERHEAD_SWITCH   
+    
+#  - # ORDINANCE LIGHTS #
+  -
+    type: var
+    var_name: L:CONST_SEATBELTS
+  -
+    type: var
+    var_name: L:CONST_NOSMOKING  
+    
+  - # TAXI LIGHTS
+    type: var
+    var_name: L:LIGHTING_TAXI_0
+  - 
+    type: var
+    var_name: L:LIGHTING_TAXI_1
+  - # LANDING LIGHTS Extend OFF Retract
+    type: var
+    var_name: L:CONST_EXTLIGHT_1
+  - 
+    type: var
+    var_name: L:CONST_EXTLIGHT_2
+  - # ELEVATOR BKR. TRIP
+    type: var
+    var_name: L:CONST_AUX_BOOST_ELEV_TRIP
+  - # AUX ELEVATOR BOOSTER SW
+    type: var
+    var_name: L:CONST_AUX_BOOST_ELEV_ON  
+  - # ELEVATOR BOOST EMERGENCY SW
+    type: var
+    var_name: L:AUX_BOOST_ELEV
+  - # RUDDER BKR. TRIP
+    type: var
+    var_name: L:CONST_AUX_BOOST_RUDD_TRIP
+  - # AUX RUDDER BOOSTER SW
+    type: var
+    var_name: L:CONST_AUX_BOOST_RUDDER
+  - # RUDDER BOOS EMERGENCY SW
+    type: var
+    var_name: L:AUX_BOOST_RUDDER
+
+#  - #############  OVERHEAD PANEL - RADIO PANEL ADF  ############
+#  - # ADF_1 ON OFF SW
+  - 
+    type: var
+    var_name: L:ADF_1
+  - 
+    type: var
+    var_name: L:ADF FREQUENCY:1
+  -
+    type: var
+    var_name: L:ADF ACTIVE FREQUENCY:1  
+  - 
+    type: var
+    var_name: L:CONST_ADF1_LOOP    
+  -
+    type: var
+    var_name: L:CONST_ADF1_MOD
+    
+#  - ############ OVERHEAD PANEL - RADIO PANEL BENDIX COM 1 ############
+  - # COM_1 ON OFF SW
+    type: var
+    var_name: L:COM_1
+  - # NON DECIMAL ACTIVE FREQUENCY
+    type: var
+    var_name: L:CONST_0_1
+    
+  - # DECIMAL ACTIVE FREQUENCY
+    type: var
+    var_name: L:COM ACTIVE FREQUENCY:1   
+  - # MARKER HI/LO/TEST Switch
+    type: var
+    var_name: L:CONST_AUDIO_PUSH_MKR1
+    
+#  - # OVERHEAD PANEL - RADIO PANEL BENDIX COM 2
+  - # COM_2 ON OFF SW
+    type: var
+    var_name: L:COM_2
+  - # NON DECIMAL ACTIVE FREQUENCY
+    type: var
+    var_name: L:CONST_0_2
+  - # DECIMAL ACTIVE FREQUENCY
+    type: var
+    var_name: L:COM ACTIVE FREQUENCY:2   
+  - # MARKER HI/LO/TEST Switch
+    type: var
+    var_name: L:CONST_AUDIO_PUSH_MKR2
+    
+#  - # OVERHEAD PANEL - RADIO PANEL - BENDIX NAV 1
+  - # NAV_1 ON OFF SW
+    type: var
+    var_name: L:NAV_1
+  - # ACTIVE FREQUENCY
+    type: var
+    var_name: L:NAV ACTIVE FREQUENCY:1
+    
+#  - # OVERHEAD PANEL - RADIO PANEL - BENDIX NAV 2
+  - # NAV_2 ON OFF SW
+    type: var
+    var_name: L:NAV_2
+  - # ACTIVE FREQUENCY
+    type: var
+    var_name: L:NAV ACTIVE FREQUENCY:2
+#  - # OVERHEAD PANEL - RADIO PANEL - TRANSPONDER
+  - # TRANSPONDER CODE
+    type: var
+    var_name: L:TRANSPONDER CODE:1
+  - # TRANSPONDER STATE
+    type: var
+    var_name: L:TRANSPONDER STATE:1
+
+# - ############     STATION 260 SYSTEMS   ############ 
+#  - # FIRE SELECTOR PANEL
+  - # FIRE SELECTOR for ENGINE START and FIRE EXT
+    type: var
+    var_name: L:FIRE_SELECTOR
+  - # FIRE EXTINGUISHER 1 Discharge
+    type: var
+    var_name: L:CONST_FIRE_exting1
+  - # FIRE EXTINGUISHER 2 Discharge
+    type: var
+    var_name: L:CONST_FIRE_exting2
+
+#  - # RESERVE OIL REPLENISH
+  - # RESERVE OIL SELECTOR
+    type: var
+    var_name: L:RESOIL_selector
+  - # 
+    type: var
+    var_name: L:RESOIL_push1
+  - # 
+    type: var
+    var_name: L:RESOIL_push2  
+  - # RESERVE OIL BREAKER
+    type: var
+    var_name: L:RESOIL_HEATER_TRIPPER
+  - # RESERVE OIL NORMAL(ELEC) & AUX (HYD)
+    type: var
+    var_name: L:RESOIL_PUMP
+    
+#  - # FIRE WARNING LIGHTS
+  - # ENG 1 ZONE 1 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE11   
+  - # ENG 1 ZONE 2&3 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE12
+  - # ENG 2 ZONE 1 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE21   
+  - # ENG 2 ZONE 2&3 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE22
+  - # ENG 3 ZONE 1 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE31   
+  - # ENG 3 ZONE 2&3 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE32
+  - # ENG 4 ZONE 1 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE41   
+  - # ENG 4 ZONE 2&3 FIRE
+    type: var
+    var_name: L:CONST_WARN_260_FIRE42
+    
+#  - # FIRE TEST SWITCHES
+  - # ENGINE 1 FIRE TEST SWITCH
+    type: var
+    var_name: L:FIRE_TEST_ENGINE1 
+  - # ENGINE 2 FIRE TEST SWITCH
+    type: var
+    var_name: L:FIRE_TEST_ENGINE2 
+  - # ENGINE 3 FIRE TEST SWITCH
+    type: var
+    var_name: L:FIRE_TEST_ENGINE3 
+  - # ENGINE 4 FIRE TEST SWITCH
+    type: var
+    var_name: L:FIRE_TEST_ENGINE4 
+  - # LEFT HEATER SWITCH
+    type: var
+    var_name: L:FIRE_TEST_HEATER1 
+  - # RIGHT HEATER SWITCH
+    type: var
+    var_name: L:FIRE_TEST_HEATER1 
+#  - # FIRE PANEL BREAKERS - FUTURE 
+#  - # FIRE PANEL TRIPPERS - FUTURE 
+    
+#  - # RECIRCULATING PANEL - FUTURE 
+  - # LEFT CYCLING SWITCH
+    type: var
+    var_name: L:clim_LH_cycl 
+  - # RIGHT CYCLING SWITCH
+    type: var
+    var_name: L:clim_RH_cycl 
+  - # LEFT CABIN HEATER OVERRIDE COVER
+    type: var
+    var_name: L:clim_LH_overheat_Cover_Position 
+  - # LEFT CABIN HEATER OVERRIDE SWITCH
+    type: var
+    var_name: L:clim_LH_overheat   
+  - # RIGHT CABIN HEATER OVERRIDE COVER
+    type: var
+    var_name: L:clim_RH_overheat_Cover_Position  
+  - # RIGHT CABIN HEATER OVERRIDE SWITCH
+    type: var
+    var_name: L:clim_RH_overheat
+  - # LEFT RECIRCULATION FAN
+    type: var
+    var_name: L:clim_LH_recirc 
+  - # RIGHT RECIRCULATION FAN
+    type: var
+    var_name: L:clim_RH_recirc 
+ 
+#  - # HEATING ENGINEER (ING) PANEL    
+  - # Engineer Heater LEFT SW COVER
+    type: var
+    var_name: L:clim_heaterign_LH_Cover_Position 
+  - # Engineer Heater LEFT SW 
+    type: var
+    var_name: L:clim_heaterign_LH
+
+  - # Engineer Heater RIGHT SW COVER
+    type: var
+    var_name: L:clim_heaterign_RH_Cover_Position 
+  - # Engineer Heater RIGHT SW
+    type: var
+    var_name: L:clim_heaterign_RH
+
+#  - # PILOT AUX HEATER PANEL  
+  - # PILOT AUX HEATER
+    type: var
+    var_name: L:clim_auxheater_selector 
+
+    
+server:
+  -
+    type: var
+    var_name: A:FUEL TANK CENTER QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK LEFT MAIN QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK LEFT AUX QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK LEFT TIP QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK RIGHT MAIN QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK RIGHT AUX QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:FUEL TANK RIGHT TIP QUANTITY
+    var_units: Gallons
+    var_type: f64
+    unreliable: true 
+  -
+    type: var
+    var_name: A:FUEL TANK RIGHT AUX LEVEL
+    var_units: Gallons
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:0
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:1
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:2
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:3
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:4
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:5
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:6
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:7
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:8
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:9
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:10
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
+  -
+    type: var
+    var_name: A:PAYLOAD STATION WEIGHT:11
+    var_units: Pounds
+    var_type: f64
+    unreliable: true
