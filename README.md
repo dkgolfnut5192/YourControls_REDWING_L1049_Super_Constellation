@@ -1,5 +1,6 @@
 # YourControls_REDWING_L1049_Super_Constellation
 YourControls_REDWING_L1049_Super_Constellation
+# Made for MSFS2020 and not validated for 2024
 
 Profile to work with YourControls application and MSFS2020. If you find any bugs, please contact me on YourControls Discord: Dkgolfnut_Dennis
 
