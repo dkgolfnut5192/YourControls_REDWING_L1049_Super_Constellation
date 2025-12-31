@@ -6,7 +6,9 @@ Profile to work with YourControls application and MSFS2020. If you find any bugs
 
 # Known Issues:
 N/A
-
+# FIXES and Changes
+  # - 12/31/2025
+   - Moved all engine controls to shared area to allow for Engineer position. Now all mixture, propeller, throtttles, cowl flaps, Primer, AutoFeather Arm, MAGS, etc are available to everyone. Be Careful!!!!!
 # FIXED: 
 Nothing noted yet
 
